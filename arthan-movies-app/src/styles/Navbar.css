@@ -1,0 +1,46 @@
+#navbar {
+  display: flex;
+  padding: 1rem 0.5rem;
+  background-color: #191919;
+  align-items: center;
+  border-radius: 0px 0px 25px 25px;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  width: 40%;
+  height: 100%;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  gap: 5rem;
+}
+
+.nav-left {
+  justify-content: flex-start;
+  padding-left: 5rem;
+}
+
+.nav-right {
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+
+#navbar form input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 18px;
+  border-bottom: 0.5px solid #242424;
+  color: #fff;
+}
+
+#navbar form button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

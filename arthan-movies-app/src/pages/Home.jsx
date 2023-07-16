@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import MovieCard from '../components/MovieCard';
+
+import '../styles/MoviesGrid.css';
 
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -28,7 +31,7 @@ const Home = () => {
       <h2 className='title'>Best rated movies</h2>
        <div className='movies-container'>
         {topMovies.length === 0  && <p>Loading...</p>}
-        {topMovies.length > 0 && topMovies.map((movie) => <p>{movie.title}</p>)}
+        {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </div>
 
