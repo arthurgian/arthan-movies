@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiCameraMovie, BiSearchAlt2 } from 'react-icons/bi';
 import { FaStar } from 'react-icons/fa';
 import { IconContext } from "react-icons";
@@ -6,35 +7,52 @@ import { IconContext } from "react-icons";
 import '../styles/Navbar.css';
 
 function Navbar() {
-  return (
 
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!search) return
+
+    navigate(`/search?q=${search}`);
+    setSearch("");
+  };
+
+
+  return (
     <div className="Navbar">
 
       <nav id="navbar">
 
-        <div class="nav-left">
+        <div className="nav-left">
           <h2>
-          <Link to="/"> <BiCameraMovie /> Arthan </Link>
+            <Link to="/"> <BiCameraMovie /> Arthan </Link>
           </h2>
         </div>
 
-        <div class="nav-center">
+        <div className="nav-center">
           <FaStar />
           <FaStar />
           <FaStar />
           <FaStar />
         </div>
 
-        <div class="nav-right">
-        <IconContext.Provider
-          value={{color:'white', size:'20'}}>
-        <form>
-          <input type='text' placeholder='Search movie(s)' />
-          <button type='submit'>
-            <BiSearchAlt2 />
-          </button>
-        </form>
-        </IconContext.Provider>
+        <div className="nav-right">
+          <IconContext.Provider
+            value={{ color: 'white', size: '20' }}>
+            <form onSubmit={handleSubmit}>
+              <input type='text'
+                placeholder='Search movie(s)'
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
+              />
+              <button type='submit'>
+                <BiSearchAlt2 />
+              </button>
+            </form>
+          </IconContext.Provider>
         </div>
 
       </nav>

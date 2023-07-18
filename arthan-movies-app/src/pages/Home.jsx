@@ -12,7 +12,7 @@ const Home = () => {
 
   const getTopRatedMovies = async (url) => {
 
-    const res = await fetch (url);
+    const res = await fetch(url);
     const data = await res.json();
 
     setTopMovies(data.results);
@@ -29,8 +29,8 @@ const Home = () => {
 
     <div className='container'>
       <h2 className='title'>Best rated movies</h2>
-       <div className='movies-container'>
-        {topMovies.length === 0  && <p>Loading...</p>}
+      <div className='movies-container'>
+        {topMovies.length === 0 && <p>Loading...</p>}
         {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </div>
