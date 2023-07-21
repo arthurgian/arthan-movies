@@ -6,6 +6,7 @@ import { IconContext } from "react-icons";
 
 import '../styles/Navbar.css';
 
+
 function Navbar() {
 
   const [search, setSearch] = useState("");
@@ -27,16 +28,14 @@ function Navbar() {
       <nav id="navbar">
 
         <div className="nav-left">
-          <h2>
-            <Link to="/"> <BiCameraMovie /> Arthan </Link>
-          </h2>
+          <Link to="/"> <img src='/logo.png'></img></Link>
         </div>
 
         <div className="nav-center">
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
+          <Link to="/"><h3>Trending</h3></Link>
+          <Link to="/"><h3>Popular</h3></Link>
+          <Link to="/"><h3>Top Rated</h3></Link>
+          <Link to="/"><h3>Most Viewed</h3></Link>
         </div>
 
         <div className="nav-right">

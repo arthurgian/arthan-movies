@@ -5,6 +5,8 @@
   margin: 2rem 0 1rem;
 }
 
+
+
 .title .query-text {
   color: var(--primary-color);
 }
@@ -13,6 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
+  justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
   gap: 1rem;
@@ -28,7 +31,6 @@
   background-color: #191919;
   padding: 1rem;
   border-radius: 20px;
-  border: 1px solid rgb(81, 81, 81);
 }
 
 .movies-container div img {
@@ -37,7 +39,7 @@
 }
 
 .movies-container div img,
-.movies-container div h2,
+.movies-container div h3,
 .movies-container div p {
   margin-bottom: 0.5rem;
 }
@@ -59,3 +61,4 @@
 .movies-container div a:hover {
   background-color: var(--primary-color);
 }
+
